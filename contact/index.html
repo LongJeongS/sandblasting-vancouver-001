@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Vancouver Pro Sandblasting · +1 (778) 200-1359</title>
+  <meta name="description" content="Mobile sandblasting in Vancouver, BC. Rust, paint, and coating removal plus dustless wet blasting — we bring the rig to you. WorkSafe BC, insured. Free estimate.">
+  <link rel="canonical" href="https://sandblastingvancouverpros.comcontact/">
+  <meta property="og:title" content="Contact Us | Vancouver Pro Sandblasting">
+  <meta property="og:description" content="Mobile sandblasting in Vancouver, BC. Rust, paint, and coating removal plus dustless wet blasting — we bring the rig to you. WorkSafe BC, insured. Free estimate.">
+  <meta property="og:url" content="https://sandblastingvancouverpros.comcontact/">
+  <meta property="og:image" content="/images/hero_bg.webp">
+  <meta property="og:type" content="website">
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+   _shared.css — Shared design system injected into every template
+   Injected by stage4_assemble.py via shared_css pre-injection.
+   All design tokens are resolved in the same pass as
+   the rest of the template.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ──────────────────────────────────────────────────────────── */
+:root {
+  --color-primary:   #1D1B19;
+  --color-accent:    #994618;
+  --color-bg:        #F6F3EE;
+  --color-text:      #1D1B19;
+  --font-heading:    'Barlow Condensed', Georgia, serif;
+  --font-body:       'Fira Sans', system-ui, sans-serif;
+  --white:           #ffffff;
+  --border:          #e0dbd2;
+  --text-mid:        #444444;
+  --text-light:      #777777;
+  --shadow-sm:       none;
+  --shadow-md:       0 4px 20px rgba(0,0,0,0.14);
+  --radius:          2px;
+  --max-w:           1200px;
+  --transition:      0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Density scale — multiplies section padding + key gaps. Driven by
+     Stage 1 design_context.density_scale (compact|comfortable|spacious). */
+  --density-scale:   1.28;
+}
+
+/* ── DESIGN VARIETY: section pattern backgrounds ───────────────────────────────
+   One of these classes is applied to <body> via pattern-diagonal-hatch feel-editorial-industrial. Patterns
+   are subtle by design and applied to alternating sections to avoid visual
+   noise. Stage 1 design_context.pattern_style selects which one. */
+
+.pattern-dot-grid .section-pad-accent,
+.pattern-dot-grid .section-pad:nth-of-type(even) {
+  background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.pattern-h-lines .section-pad-accent,
+.pattern-h-lines .section-pad:nth-of-type(even) {
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 1px, transparent 1px, transparent 18px);
+}
+.pattern-diagonal-hatch .section-pad-accent,
+.pattern-diagonal-hatch .section-pad:nth-of-type(even) {
+  background-image: repeating-linear-gradient(45deg,
+    color-mix(in srgb, var(--color-primary) 8%, transparent),
+    color-mix(in srgb, var(--color-primary) 8%, transparent) 1px,
+    transparent 1px, transparent 12px);
+}
+.pattern-rays .section-pad-accent {
+  background-image: conic-gradient(from 0deg at 50% 100%,
+    transparent 0deg,
+    color-mix(in srgb, var(--color-primary) 15%, transparent) 90deg,
+    transparent 180deg);
+}
+.pattern-mesh-gradient .section-pad-accent {
+  background-image:
+    radial-gradient(ellipse at top right, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 60%),
+    radial-gradient(ellipse at bottom left, color-mix(in srgb, var(--color-primary) 15%, transparent), transparent 60%);
+}
+.pattern-concentric .section-pad-accent {
+  background-image: repeating-radial-gradient(circle at 0 0,
+    transparent 0 24px,
+    color-mix(in srgb, var(--color-accent) 12%, transparent) 24px 25px);
+}
+.pattern-band-rule .section-pad + .section-pad,
+.pattern-band-rule .section-pad-accent {
+  border-top: 8px solid var(--color-accent);
+}
+.pattern-wave .section-pad-accent {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='40'><path d='M0 30 Q15 10 30 30 T60 30' stroke='rgba(0,0,0,0.10)' stroke-width='1' fill='none'/></svg>");
+}
+
+/* ── DESIGN VARIETY: hero variant overrides ────────────────────────────────────
+   Stage 1 design_context.hero_variant drives one of these classes on #hero.
+   The default (image_right) needs no override — base hero CSS in single.html's
+   <style> block handles it. Each variant overrides specific properties without
+   re-templating the underlying HTML structure. */
+
+/* split_color — solid primary block on left, photo-backed white on right.
+   The hero photo is constrained to the right half and rendered at low
+   opacity so the form card sits cleanly on top of a softened image rather
+   than a stark white field. The navy color block stays flat. */
+#hero.hero-variant-split-color .hero-bg {
+  left: 50%;
+  width: 50%;
+  opacity: 0.32;
+  filter: brightness(1.06) saturate(0.82);
+}
+#hero.hero-variant-split-color .hero-bg::after {
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.55) 100%) !important;
+}
+#hero.hero-variant-split-color { background: linear-gradient(to right,
+  var(--color-primary) 0%, var(--color-primary) 50%, var(--white) 50%, var(--white) 100%); }
+#hero.hero-variant-split-color .hero-content { color: var(--white); }
+#hero.hero-variant-split-color .hero-headline,
+#hero.hero-variant-split-color .hero-content h1 { color: var(--white); }
+#hero.hero-variant-split-color .hero-tagline { color: color-mix(in srgb, var(--color-accent) 90%, white); }
+#hero.hero-variant-split-color .hero-sub { color: rgba(255,255,255,0.85); }
+#hero.hero-variant-split-color .hero-established { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+#hero.hero-variant-split-color .hero-phone { color: var(--white); }
+
+/* full_bleed — same hero photo as default, but darker overlay + centered text + form below */
+#hero.hero-variant-full-bleed .hero-bg::after { background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65)) !important; }
+#hero.hero-variant-full-bleed .hero-split { grid-template-columns: 1fr !important; max-width: 720px; margin: 0 auto; gap: 28px; }
+#hero.hero-variant-full-bleed .hero-content { text-align: center; }
+#hero.hero-variant-full-bleed .hero-headline { font-size: clamp(36px, 6vw, 64px); }
+#hero.hero-variant-full-bleed .hero-tagline,
+#hero.hero-variant-full-bleed .hero-sub { text-align: center; }
+#hero.hero-variant-full-bleed .hero-phone { justify-content: center; }
+
+/* centered_credentials — no photo, white bg, centered text + form stacked */
+#hero.hero-variant-centered-credentials .hero-bg { display: none; }
+#hero.hero-variant-centered-credentials { background: var(--white); border-bottom: 1px solid var(--border); }
+#hero.hero-variant-centered-credentials .hero-split { grid-template-columns: 1fr !important; max-width: 680px; margin: 0 auto; gap: 32px; }
+#hero.hero-variant-centered-credentials .hero-content { text-align: center; color: var(--color-text); }
+#hero.hero-variant-centered-credentials .hero-headline,
+#hero.hero-variant-centered-credentials .hero-content h1 { color: var(--color-text); }
+#hero.hero-variant-centered-credentials .hero-sub { color: var(--text-mid); text-align: center; }
+#hero.hero-variant-centered-credentials .hero-tagline { color: var(--color-primary); text-align: center; }
+#hero.hero-variant-centered-credentials .hero-phone { justify-content: center; color: var(--color-primary); }
+#hero.hero-variant-centered-credentials .hero-established { color: var(--color-accent); border-color: var(--color-accent); }
+#hero.hero-variant-centered-credentials .hero-form-card { max-width: 540px; margin: 0 auto; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+
+/* editorial — subtle warm bg, large serif headline, asymmetric grid */
+#hero.hero-variant-editorial .hero-bg { display: none; }
+#hero.hero-variant-editorial { background: color-mix(in srgb, var(--color-accent) 6%, var(--white)); }
+#hero.hero-variant-editorial .hero-split { grid-template-columns: 1.5fr 1fr !important; gap: 48px; align-items: center; }
+#hero.hero-variant-editorial .hero-content { color: var(--color-text); }
+#hero.hero-variant-editorial .hero-headline { font-size: clamp(40px, 6vw, 72px); line-height: 1.0; color: var(--color-text); }
+#hero.hero-variant-editorial .hero-tagline { color: var(--color-accent); border-top: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); padding: 6px 0; display: inline-block; width: max-content; font-size: 12px; letter-spacing: 0.16em; }
+#hero.hero-variant-editorial .hero-sub { color: var(--text-mid); font-size: 18px; max-width: 50ch; }
+#hero.hero-variant-editorial .hero-established { display: none; }
+#hero.hero-variant-editorial .hero-phone { color: var(--color-primary); }
+#hero.hero-variant-editorial .hero-form-card { border: 1px solid var(--border); }
+
+/* ── DESIGN VARIETY: testimonial variant overrides ─────────────────────────────
+   Stage 1 design_context.testimonial_variant selects one of:
+   - card_rail (default — current treatment, no override needed)
+   - pull_quote (large serif italic quotes, no card chrome)
+   - quote_wall (denser grid of shorter quotes) */
+
+/* pull_quote — strip card chrome, large serif italic, accent rule */
+#reviews.testimonial-variant-pull-quote .testimonials-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  overflow: visible;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-card {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0;
+  padding: 8px 0 8px 28px;
+  box-shadow: none;
+  min-width: 0;
+  flex: none;
+  scroll-snap-align: none;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-author { padding-top: 0; border: none; }
+#reviews.testimonial-variant-pull-quote .author-avatar {
+  width: 36px; height: 36px;
+  background: transparent;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-primary);
+}
+/* Pull-quote variant features select quotes — show only the first 3. The
+   remaining 5 testimonials stay in stage1 (8 required by validator) but
+   render hidden. Premium positioning benefits from quality > quantity. */
+#reviews.testimonial-variant-pull-quote .testimonial-card:nth-child(n+4) {
+  display: none;
+}
+/* Quote-wall variant shows a 3x2 grid — limit to first 6 for cleaner symmetry. */
+#reviews.testimonial-variant-quote-wall .testimonial-card:nth-child(n+7) {
+  display: none;
+}
+
+/* ── DESIGN VARIETY: services section variants ─────────────────────────────────
+   Stage 1 design_context.services_variant selects one of:
+   - card_grid (default — auto-fill grid of equal cards, no override)
+   - horizontal_strip (4 services in a single horizontal row, denser cards)
+   - editorial_list (numbered list with large numerals, services as rows) */
+
+/* horizontal_strip — denser strip across the full width */
+#services.services-variant-horizontal-strip .services-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px;
+}
+#services.services-variant-horizontal-strip .service-card-modal {
+  padding: 20px 16px;
+  text-align: center;
+}
+#services.services-variant-horizontal-strip .service-icon {
+  margin-left: auto; margin-right: auto;
+  width: 44px; height: 44px;
+}
+#services.services-variant-horizontal-strip .service-card-modal h3 { font-size: 15px; }
+#services.services-variant-horizontal-strip .service-card-modal p { font-size: 13px; }
+@media (max-width: 900px) {
+  #services.services-variant-horizontal-strip .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* editorial_list — large numerals + horizontal rows + thin rule between */
+#services.services-variant-editorial-list .services-grid {
+  display: block !important;
+  max-width: 880px;
+  margin: 0 auto;
+  counter-reset: editorial-service;
+}
+#services.services-variant-editorial-list .service-card-modal {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0 32px;
+  padding: 32px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  align-items: start;
+  counter-increment: editorial-service;
+  position: relative;
+}
+#services.services-variant-editorial-list .service-card-modal:first-child { border-top: none; }
+#services.services-variant-editorial-list .service-card-modal:hover {
+  transform: none;
+  box-shadow: none;
+}
+/* Numeral takes col 1, spans all rows */
+#services.services-variant-editorial-list .service-card-modal::before {
+  content: '0' counter(editorial-service);
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  opacity: 0.7;
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+/* Service icon hidden — numeral replaces it */
+#services.services-variant-editorial-list .service-icon { display: none; }
+/* All content children explicitly placed in col 2 so they don't backfill col 1 */
+#services.services-variant-editorial-list .service-card-modal > h3,
+#services.services-variant-editorial-list .service-card-modal > p,
+#services.services-variant-editorial-list .service-card-modal > .service-toggle {
+  grid-column: 2;
+}
+#services.services-variant-editorial-list .service-card-modal h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+#services.services-variant-editorial-list .service-card-modal p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+@media (max-width: 720px) {
+  #services.services-variant-editorial-list .service-card-modal {
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+  }
+  #services.services-variant-editorial-list .service-card-modal::before { font-size: 40px; }
+}
+
+/* ── DESIGN VARIETY: why-us section variants ───────────────────────────────────
+   Stage 1 design_context.why_us_variant selects one of:
+   - text_with_image (default — 1fr 1fr text-left image-right, no override)
+   - image_first (1.2fr 1fr image-left text-right — image visually leads)
+   - text_centered (no image, centered text + value-props, more whitespace) */
+
+/* image_first — flip the grid and give image more weight */
+#why-us.why-us-variant-image-first .why-us-grid {
+  grid-template-columns: 1.2fr 1fr !important;
+  direction: rtl;
+}
+#why-us.why-us-variant-image-first .why-us-grid > * { direction: ltr; }
+
+/* text_centered — hide the image and body text, lead with credentialed
+   3-col value-prop grid. Width matches the rest of the page.
+   Section gets a soft accent-derived tint to break up the white page. */
+#why-us.why-us-variant-text-centered {
+  background: color-mix(in srgb, var(--color-accent) 7%, var(--white)) !important;
+}
+
+/* Opt-in section tint via design_context.section_tint = "subtle".
+   When set, sections that would otherwise be flat white pick up a soft
+   accent-derived tint to break page rhythm. body class wins over
+   single.html's inline `#faq { background: var(--white); }`. */
+body.section-tint-subtle #faq {
+  background-color: color-mix(in srgb, var(--color-accent) 7%, var(--white)) !important;
+}
+#why-us.why-us-variant-text-centered .why-us-grid {
+  grid-template-columns: 1fr !important;
+  text-align: center;
+}
+#why-us.why-us-variant-text-centered .why-us-photo { display: none; }
+/* Suppress the long body paragraph — variant relies on headline + evidence */
+#why-us.why-us-variant-text-centered .why-us-left .section-subtitle { display: none; }
+#why-us.why-us-variant-text-centered .value-props {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+  text-align: left;
+}
+#why-us.why-us-variant-text-centered .value-prop {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+@media (max-width: 800px) {
+  #why-us.why-us-variant-text-centered .value-props { grid-template-columns: 1fr; }
+}
+
+/* ── DESIGN VARIETY: process section variants ──────────────────────────────────
+   Stage 1 design_context.process_variant selects one of:
+   - card_grid (default — current 4-column horizontal flow with dashed rail)
+   - timeline (vertical timeline with continuous left rail, larger step bodies)
+   - stepped (no card chrome, oversized numbers carry the rhythm) */
+
+/* timeline — single-column vertical timeline with continuous left rail.
+   Width matches the rest of the page; the timeline rail anchors flush left
+   to the 70px markers regardless of container width. */
+#process.process-variant-timeline .process-grid {
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  position: relative;
+}
+#process.process-variant-timeline .process-grid::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 35px;
+  right: auto;
+  width: 2px;
+  height: auto;
+  border: none;
+  background: var(--color-accent);
+  opacity: 0.4;
+}
+#process.process-variant-timeline .process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background: transparent;
+  border: none;
+  padding: 24px 0;
+  border-radius: 0;
+  position: relative;
+}
+#process.process-variant-timeline .process-step:hover { transform: none; box-shadow: none; }
+#process.process-variant-timeline .process-step-header {
+  background: var(--color-primary);
+  border-radius: 50%;
+  width: 70px; height: 70px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  min-height: 0;
+}
+#process.process-variant-timeline .process-step-header::before {
+  content: '0' counter(process-step);
+  font-size: 22px;
+  color: var(--color-accent);
+  position: static;
+  font-weight: 700;
+}
+#process.process-variant-timeline .process-step-icon { display: none; }
+#process.process-variant-timeline .process-step-body {
+  padding: 8px 0 8px 24px;
+}
+#process.process-variant-timeline .process-step h3 { font-size: 18px; margin-bottom: 6px; }
+#process.process-variant-timeline .process-step p { font-size: 15px; }
+
+/* stepped — minimal card chrome, oversized numbers as the visual rhythm */
+#process.process-variant-stepped .process-grid::before { display: none; }
+#process.process-variant-stepped .process-step {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+#process.process-variant-stepped .process-step:hover { transform: none; box-shadow: none; }
+#process.process-variant-stepped .process-step-header {
+  background: transparent;
+  padding: 0 0 12px;
+  min-height: 0;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 18px;
+}
+#process.process-variant-stepped .process-step-header::before {
+  font-size: 72px;
+  color: var(--color-primary);
+  opacity: 1;
+  position: static;
+  font-weight: 800;
+}
+#process.process-variant-stepped .process-step-icon { display: none; }
+#process.process-variant-stepped .process-step-body { padding: 0; }
+#process.process-variant-stepped .process-step h3 { font-size: 18px; }
+
+/* ── DESIGN VARIETY: gallery section variants ──────────────────────────────────
+   Stage 1 design_context.gallery_variant selects one of:
+   - grid (default — equal 3-column grid, no override)
+   - asymmetric_feature (1 large hero image left, 2 smaller stacked right) */
+
+#gallery.gallery-variant-asymmetric-feature .gallery-grid {
+  grid-template-columns: 2fr 1fr !important;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(1) {
+  grid-column: 1; grid-row: 1 / 3;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(2) {
+  grid-column: 2; grid-row: 1;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(3) {
+  grid-column: 2; grid-row: 2;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 720px) {
+  #gallery.gallery-variant-asymmetric-feature .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(1),
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(2),
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(3) {
+    grid-column: 1; grid-row: auto;
+  }
+}
+
+/* quote_wall — denser 3-col grid of shorter quotes, no horizontal scroll */
+#reviews.testimonial-variant-quote-wall .testimonials-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow: visible;
+  padding: 0;
+}
+#reviews.testimonial-variant-quote-wall .testimonial-card {
+  min-width: 0;
+  flex: none;
+  scroll-snap-align: none;
+  padding: 22px;
+}
+#reviews.testimonial-variant-quote-wall .testimonial-quote {
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+@media (max-width: 900px) {
+  #reviews.testimonial-variant-quote-wall .testimonials-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  #reviews.testimonial-variant-quote-wall .testimonials-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── RESET & BASE ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--color-text);
+  background: var(--white);
+}
+
+/* Prevent layout-breaking overflow on long words (long URLs, no-space content) */
+p, li, td, .section-subtitle, .team-bio, .testimonial-quote, .faq-answer-inner {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ── LAYOUT UTILITIES ───────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section padding scaled by Stage 1 design_context.density_scale.
+   compact (0.78) → ~56px, comfortable (1.0) → 72px, spacious (1.28) → ~92px */
+.section-pad        { padding: calc(72px * var(--density-scale)) 0; }
+.section-pad-sm     { padding: calc(48px * var(--density-scale)) 0; }
+.section-pad-accent { padding: calc(40px * var(--density-scale)) 0; } /* Compact accent bands: trust-band, stats-bar */
+
+/* ── TYPOGRAPHY HELPERS ─────────────────────────────────────────────────────── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-mid);
+  max-width: 560px;
+}
+
+/* ── BUTTONS ────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition), filter var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.btn:hover  { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary { background: var(--color-accent); color: var(--white); }
+.btn-primary:hover { filter: brightness(0.88); }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+.btn-outline-dark:hover { background: var(--color-primary); color: var(--white); }
+
+/* ── CTA BAND — SHARED STRUCTURAL STYLES ────────────────────────────────────── */
+#cta-band { padding: 40px 0; }
+
+/* Band layout variant (home / about) */
+.cta-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cta-band-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.cta-band-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-top: 6px; }
+
+.cta-band-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.cta-band-phone {
+  color: rgba(255,255,255,0.9);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Centered band variant (service / reviews / faq / area / contact) */
+.cta-band-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 32px;
+  background: var(--white);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+.cta-band-btn:hover { background: rgba(255,255,255,0.9); transform: translateY(-1px); }
+
+/* CTA-band scope override: when .btn-primary appears inside the dark green band,
+   invert to white-background-with-primary-text for maximum contrast. The default
+   .btn-primary (accent-colored) lacks contrast against the primary-colored band
+   when accent and primary sit at similar luminance. */
+#cta-band .btn-primary {
+  background: var(--white);
+  color: var(--color-primary);
+}
+#cta-band .btn-primary:hover {
+  background: rgba(255,255,255,0.9);
+  filter: none;
+}
+
+/* Hide area cards/pills that have no content — happens on sites with fewer
+   than 10 service areas. The home/single templates hard-code 10 slots; these
+   selectors elide any that didn't get populated. */
+.area-card[data-area=""] { display: none; }
+.area-pill:empty { display: none; }
+
+/* Hide trust-items with empty labels (sites that want fewer than 4 badges leave
+   slots blank in stage2.trust_badges); collapse the grid from 4 → 3 columns
+   when one is hidden so the visible items stay evenly distributed. */
+.trust-item:has(strong:empty) { display: none; }
+.trust-grid:has(.trust-item:has(strong:empty)) { grid-template-columns: repeat(3, 1fr); }
+
+/* ── NAVIGATION ─────────────────────────────────────────────────────────────── */
+#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  gap: 16px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-logo-text span { color: var(--color-accent); }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"],
+.nav-links a[aria-current] { background: rgba(255,255,255,0.1); color: var(--white); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.nav-phone {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-phone svg { flex-shrink: 0; }
+
+/* Mobile hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 12px;
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+/* Hamburger → X animation */
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Services Dropdown ── */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+  font-family: inherit;
+  line-height: 1;
+}
+.nav-dropdown-trigger:hover,
+.nav-dropdown[data-open] .nav-dropdown-trigger {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+.nav-chevron {
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+.nav-dropdown[data-open] .nav-chevron { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  max-width: calc(100vw - 24px); /* prevent right-edge clipping on narrow viewports */
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+  /* Closed state — fade + slide up */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  visibility: hidden;
+  transition:
+    opacity 150ms cubic-bezier(0.25, 1, 0.5, 1),
+    transform 150ms cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0s linear 150ms;
+}
+.nav-dropdown[data-open] .nav-dropdown-menu {
+  /* Open state — fade + slide down */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+  transition:
+    opacity 200ms cubic-bezier(0.25, 1, 0.5, 1),
+    transform 200ms cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0s linear 0s;
+}
+.nav-dropdown-menu li { list-style: none; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-dropdown-menu a:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--color-primary);
+}
+
+/* Mobile menu */
+.nav-mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--color-primary);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 0 20px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  color: rgba(255,255,255,0.85);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-mobile-menu .mobile-cta { margin: 12px 24px 0; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────────────────── */
+#site-footer {
+  background: var(--color-primary);
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-top { padding: 56px 0 40px; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+/* Item 1: Footer brand link (company name links to homepage from every sub-page). */
+.footer-brand-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.footer-brand-link:hover { opacity: 0.75; }
+.footer-col p { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--white); }
+
+.footer-nap { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.65); }
+
+.footer-social { display: flex; gap: 10px; margin-top: 16px; }
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.footer-social a:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── MOBILE FLOATING CTA ────────────────────────────────────────────────────── */
+#mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 888;
+  background: var(--color-accent);
+  color: var(--white);
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.18);
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ── SHARED COMPONENTS ──────────────────────────────────────────────────────── */
+
+/* Testimonial cards (used by home, about, area) */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* Item 3: .stars rule removed — per-testimonial star displays were a fake-rating surface. */
+
+.testimonial-quote {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-name  { font-weight: 700; font-size: 14px; color: var(--color-text); }
+.author-location { font-size: 12px; color: var(--text-light); }
+
+/* Team cards (used by home, about) */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--color-bg);
+  transition: box-shadow var(--transition);
+}
+.team-card:hover { box-shadow: var(--shadow-md); }
+
+.team-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  background: var(--color-bg);
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-name  { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.team-role  { font-size: 13px; color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.team-bio   { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+/* ── ACCESSIBILITY ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Skip navigation link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius);
+  z-index: 9999;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ── BASE RESPONSIVE ────────────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  /* Footer: NAP spans full width, 3 link columns sit in a row beneath */
+  .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .footer-col:first-child { grid-column: 1 / -1; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 48px 0; }
+
+  /* Nav */
+  .nav-links, .nav-phone, .nav-actions .btn { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* CTA band */
+  .cta-band-inner  { flex-direction: column; text-align: center; }
+  .cta-band-actions { flex-direction: column; width: 100%; }
+  .cta-band-actions .btn { width: 100%; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Mobile floating CTA */
+  #mobile-cta { display: flex; }
+  body { padding-bottom: 58px; }
+}
+
+/* ── SERVICE AREAS GRID ─────────────────────────────────────────────────── */
+#service-areas { background: var(--color-bg); }
+
+.areas-header { text-align: center; margin-bottom: 36px; }
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.area-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 18px;
+  background: var(--color-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition), color var(--transition);
+}
+.area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.area-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.area-card[data-area=""] { display: none; }
+
+.area-card-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.area-card-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.area-card:hover .area-card-arrow { transform: translateX(3px); }
+
+/* ── Form thank-you state ──────────────────────────────────────────────────── */
+.form-thank-you { display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 24px; gap:16px; min-height:200px; }
+.form-thank-you-icon { width:56px; height:56px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; color:var(--white); flex-shrink:0; }
+.form-thank-you h3 { font-size:22px; margin:0; }
+.form-thank-you p  { color:var(--text-mid); font-size:15px; max-width:360px; margin:0; }
+.form-thank-you a  { color:var(--color-primary); font-weight:600; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EDITORIAL-INDUSTRIAL THEME LAYER  (opt-in; scoped to body.feel-editorial-industrial)
+   Emitted only when design_context.visual_feel == "editorial_industrial".
+   Every selector is body-scoped, so it is inert for all other sites and wins
+   over templates' inline <style> by specificity (two classes > one).
+   Mirrors the Stitch "Industrial Editorial" system: bone page, graphite
+   statement bands, copper accents, condensed uppercase headlines, hairline
+   rules instead of card shadows.
+   ═══════════════════════════════════════════════════════════════════════════ */
+body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7be; }
+
+/* ── Type scale ported verbatim from the Stitch design system ──
+   metadata 11px/0.15em/600 · headline-md 24/600 · headline-lg 48/700 ·
+   display-lg 72/-0.02em/700 · body 16-18/1.6. Same families (Barlow Condensed +
+   Fira Sans), matched weight/size/tracking. */
+.feel-editorial-industrial .section-eyebrow,
+.feel-editorial-industrial .hero-tagline {
+  font-family: var(--font-body);
+  text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 11px;
+  color: var(--color-accent);
+}
+.feel-editorial-industrial .section-eyebrow {
+  padding-top: 14px; border-top: 1px solid var(--hairline); display: inline-block; margin-bottom: 18px;
+}
+
+/* Condensed uppercase headlines (display + headline scale) */
+.feel-editorial-industrial .section-title,
+.feel-editorial-industrial .hero-headline,
+.feel-editorial-industrial h1,
+.feel-editorial-industrial h2 { text-transform: uppercase; font-weight: 700; }
+.feel-editorial-industrial .section-title {
+  font-size: clamp(30px, 3.8vw, 46px); line-height: 1.08; letter-spacing: -0.01em;
+}
+.feel-editorial-industrial .hero-headline {
+  font-size: clamp(40px, 6vw, 72px); line-height: 1.0; letter-spacing: -0.02em;
+}
+
+/* Hairline rules instead of card shadows */
+.feel-editorial-industrial .spec-item,
+.feel-editorial-industrial .gallery-item,
+.feel-editorial-industrial .area-card,
+.feel-editorial-industrial .review-card,
+.feel-editorial-industrial .testimonial-card { box-shadow: none !important; }
+
+/* Copper CTAs (square-ish, no glow) */
+.feel-editorial-industrial .btn-primary { background: var(--color-accent); color: var(--white); box-shadow: none; }
+.feel-editorial-industrial .btn-primary:hover { background: var(--color-primary); }
+
+/* Boxed cards lift off the bone page with a WHITE surface (Stitch lifts via
+   surface color, not shadow). .benefit-card is already white; bring .related-card
+   ("Explore Our Other Services") in line so it stands out instead of blending. */
+.feel-editorial-industrial .related-card { background: var(--white); border-color: var(--hairline); }
+.feel-editorial-industrial .related-card:hover { border-color: var(--color-accent); box-shadow: none; }
+.feel-editorial-industrial .benefit-card { border-color: var(--hairline); }
+
+/* Local intro spans the page like every other section (its base style centers a
+   narrow 720px column, which reads as indented/misaligned against the full-width
+   editorial sections). Center the heading block, and let the body paragraphs run
+   the full container width instead of a narrow capped column. */
+.feel-editorial-industrial .svc-local-intro .container { max-width: var(--max-w); text-align: left; }
+.feel-editorial-industrial .svc-local-intro .section-eyebrow { display: inline-block; }
+.feel-editorial-industrial .svc-local-intro h2 { max-width: none; }
+.feel-editorial-industrial .svc-local-intro-body { max-width: none; }
+
+/* ── Services → NUMBERED EDITORIAL ROW INDEX (Stitch "Core Capabilities") ──
+   Convert the card grid into full-width rows: big copper numeral, uppercase
+   title + blurb, copper "View →" pushed right, hairline dividers. Pure CSS via
+   counters — no markup change. Applies to home (.service-card) and area
+   (.area-service-card) lists. */
+.feel-editorial-industrial .services-header {
+  padding-bottom: 18px; border-bottom: 1px solid var(--color-primary); margin-bottom: 4px;
+}
+.feel-editorial-industrial .services-grid,
+.feel-editorial-industrial .area-services-grid {
+  display: block !important; grid-template-columns: none !important;
+  counter-reset: svc; border-top: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .service-card,
+.feel-editorial-industrial .area-service-card {
+  counter-increment: svc;
+  display: grid !important; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto;
+  column-gap: 32px; align-items: center;
+  background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--hairline) !important;
+  border-radius: 0 !important; box-shadow: none !important; padding: 30px 6px; margin: 0;
+}
+.feel-editorial-industrial .service-card::before,
+.feel-editorial-industrial .area-service-card::before {
+  content: counter(svc, decimal-leading-zero);
+  grid-column: 1; grid-row: 1 / span 2; align-self: center;
+  font-family: var(--font-heading); font-weight: 700; font-size: clamp(40px, 5vw, 64px);
+  line-height: 1; color: var(--color-accent); opacity: 0.9;
+}
+.feel-editorial-industrial .service-card .service-icon { display: none; }
+.feel-editorial-industrial .service-card h3,
+.feel-editorial-industrial .area-service-card h3 {
+  grid-column: 2; grid-row: 1; margin: 0 0 4px;
+  text-transform: uppercase; font-weight: 600; line-height: 1.12;
+  font-size: clamp(19px, 2.2vw, 24px); letter-spacing: -0.005em;
+}
+.feel-editorial-industrial .service-card p,
+.feel-editorial-industrial .area-service-card p {
+  grid-column: 2; grid-row: 2; margin: 0; color: var(--text-mid); font-size: 15px; line-height: 1.5;
+}
+.feel-editorial-industrial .service-card .service-learn-more,
+.feel-editorial-industrial .area-service-card a {
+  grid-column: 3; grid-row: 1 / span 2; align-self: center; justify-self: end; white-space: nowrap;
+  font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.15em;
+  font-size: 11px; font-weight: 600; color: var(--color-accent);
+}
+.feel-editorial-industrial .service-card:hover,
+.feel-editorial-industrial .area-service-card:hover {
+  transform: none; background: rgba(29,27,25,0.025) !important;
+}
+@media (max-width: 640px) {
+  .feel-editorial-industrial .service-card,
+  .feel-editorial-industrial .area-service-card { column-gap: 18px; grid-template-columns: auto 1fr; }
+  .feel-editorial-industrial .service-card .service-learn-more,
+  .feel-editorial-industrial .area-service-card a { grid-column: 2; grid-row: 3; justify-self: start; margin-top: 8px; }
+}
+
+/* ── Why-Us → dark graphite STATEMENT BAND (feel-scoped, no variant needed) ──
+   Full-bleed graphite band, oversized copper-eyebrowed pull-headline, photo
+   dropped, value-props stacked as a light evidence column. */
+.feel-editorial-industrial #why-us { background: var(--color-primary) !important; color: var(--white); }
+/* Full-width 2-col band: headline block LEFT, value-props column RIGHT (the photo
+   column is hidden, so dissolve .why-us-left with display:contents and place its
+   children across both columns instead of cramming them into the left half). */
+.feel-editorial-industrial #why-us .why-us-grid { grid-template-columns: 1.1fr 0.9fr !important; gap: 72px; align-items: start; direction: ltr; }
+.feel-editorial-industrial #why-us .why-us-photo { display: none; }
+.feel-editorial-industrial #why-us .why-us-left { display: contents; }
+.feel-editorial-industrial #why-us .section-eyebrow { grid-column: 1; color: #e0915c; border-top-color: rgba(255,255,255,0.25); }
+.feel-editorial-industrial #why-us .section-title { grid-column: 1; color: var(--white); font-size: clamp(38px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.02em; }
+.feel-editorial-industrial #why-us .section-subtitle { grid-column: 1; color: rgba(255,255,255,0.78); max-width: 52ch; }
+.feel-editorial-industrial #why-us .value-props {
+  grid-column: 2; grid-row: 1 / span 4; align-self: start; margin: 0;
+  display: grid !important; grid-template-columns: 1fr; gap: 30px;
+  border-left: 1px solid rgba(255,255,255,0.18); padding-left: 40px;
+}
+.feel-editorial-industrial #why-us .value-prop h4 { color: var(--white); }
+.feel-editorial-industrial #why-us .value-prop p { color: rgba(255,255,255,0.72); }
+/* Icons read on the dark band: drop the dark chip, use a light copper. */
+.feel-editorial-industrial #why-us .vp-icon {
+  background: none !important; border-radius: 0 !important; width: auto !important; height: auto !important;
+  color: #e0915c;
+}
+@media (max-width: 900px) {
+  .feel-editorial-industrial #why-us .why-us-grid { grid-template-columns: 1fr !important; gap: 36px; }
+  .feel-editorial-industrial #why-us .section-eyebrow,
+  .feel-editorial-industrial #why-us .section-title,
+  .feel-editorial-industrial #why-us .section-subtitle { grid-column: 1; }
+  .feel-editorial-industrial #why-us .value-props { grid-column: 1; grid-row: auto; border-left: 0; padding-left: 0; }
+}
+
+/* ── Service page Materials & Specs → hairline ROWS, label-left / value-right ── */
+.feel-editorial-industrial .specs-grid { display: block !important; grid-template-columns: none !important; gap: 0; border-top: 1px solid var(--hairline); }
+.feel-editorial-industrial .spec-item { display: flex; justify-content: space-between; align-items: baseline; background: transparent; border: 0; border-bottom: 1px solid var(--hairline); border-radius: 0; padding: 18px 0; gap: 28px; }
+.feel-editorial-industrial .spec-item:hover { transform: none; }
+.feel-editorial-industrial .spec-icon { display: none; }
+.feel-editorial-industrial .spec-text { display: contents; }
+.feel-editorial-industrial .spec-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--text-mid); }
+.feel-editorial-industrial .spec-value { text-align: right; font-size: 16px; font-weight: 600; color: var(--color-text); }
+
+/* ── FAQ → hairline dividers, no card chrome ── */
+.feel-editorial-industrial .faq-item { background: transparent; border: 0; border-bottom: 1px solid var(--hairline); border-radius: 0; box-shadow: none; }
+
+/* ── Area-page coordinate flourish (editorial only; hidden everywhere else) ── */
+.area-coords { display: none; }
+.feel-editorial-industrial .area-coords {
+  display: block; margin: 0 auto 8px; font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--color-accent); font-family: var(--font-body); font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SERVICE-PAGE SECTION REDESIGN (Stitch screen D) — Why Choose Us / How It Works /
+   Where It Works brought into the editorial spec-sheet language: hairline ledgers,
+   big copper numerals, copper Material Symbols icons (no dark circles, no boxes).
+   Icons render only when the Material Symbols webfont loads (theme feels only).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.feel-editorial-industrial .benefit-icon::before,
+.feel-editorial-industrial .application-item::before {
+  font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal;
+  line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap;
+  font-feature-settings: 'liga'; -webkit-font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  color: var(--color-accent);
+}
+
+/* 1) WHY CHOOSE US → hairline ledger grid + copper Material Symbol icons */
+.feel-editorial-industrial .benefits-grid {
+  gap: 0; margin-top: 28px;
+  border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .benefit-card {
+  background: transparent !important; border: 0 !important;
+  border-right: 1px solid var(--hairline) !important; border-bottom: 1px solid var(--hairline) !important;
+  border-radius: 0 !important; box-shadow: none !important; padding: 28px 24px;
+}
+.feel-editorial-industrial .benefit-card:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial .benefit-icon {
+  width: auto; height: auto; background: transparent !important;
+  border-radius: 0; margin-bottom: 14px; color: var(--color-accent);
+}
+.feel-editorial-industrial .benefit-icon svg { display: none; }
+.feel-editorial-industrial .benefit-icon::before { content: attr(data-ms); font-size: 32px; }
+.feel-editorial-industrial .benefit-title { text-transform: uppercase; letter-spacing: 0.02em; font-size: 15px; }
+
+/* 2) SERVICE-PAGE process (.svc-process .process-steps) → big copper numerals on
+   hairline rows. Scoped to .process-steps so it never touches the homepage process
+   (which uses .process-grid + its own `process-step` counter). */
+.feel-editorial-industrial .process-steps {
+  display: block !important; grid-template-columns: none !important; margin-top: 8px;
+  border-top: 1px solid var(--hairline); counter-reset: pstep;
+}
+.feel-editorial-industrial .process-steps::before { display: none !important; }
+.feel-editorial-industrial .process-steps .process-step {
+  counter-increment: pstep; display: grid; grid-template-columns: auto 1fr;
+  column-gap: 32px; align-items: start; text-align: left;
+  padding: 26px 4px; border-bottom: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .process-step-num {
+  width: auto; height: auto; background: transparent !important; border-radius: 0;
+  box-shadow: none !important; margin: 0; font-size: 0; grid-row: 1 / span 2; align-self: start;
+}
+.feel-editorial-industrial .process-step-num::before {
+  content: counter(pstep, decimal-leading-zero);
+  font-family: var(--font-heading); font-weight: 700; color: var(--color-accent);
+  font-size: clamp(40px, 5vw, 60px); line-height: 0.9;
+}
+.feel-editorial-industrial .process-steps .process-step h3 {
+  grid-column: 2; grid-row: 1; text-align: left; text-transform: uppercase;
+  font-size: clamp(18px, 2vw, 22px); margin: 0 0 6px;
+}
+.feel-editorial-industrial .process-steps .process-step p { grid-column: 2; grid-row: 2; text-align: left; margin: 0; max-width: 72ch; }
+.feel-editorial-industrial .process-result-img { box-shadow: none !important; border: 1px solid var(--hairline); margin-top: 48px; }
+
+/* HOMEPAGE 'How It Works' (#process .process-grid) → horizontal copper-numeral
+   timeline (Stitch screen E): centered header, 4 columns bracketed by top/bottom
+   hairlines, big copper numerals, no cards/shadows/icon-tiles/connector. */
+.feel-editorial-industrial #process .process-header { text-align: center; }
+.feel-editorial-industrial #process .process-grid {
+  gap: 48px; margin-top: 44px; padding: 44px 0;
+  border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+}
+.feel-editorial-industrial #process .process-grid::before { display: none !important; }
+.feel-editorial-industrial #process .process-grid .process-step {
+  background: transparent !important; border: 0 !important; border-radius: 0 !important;
+  box-shadow: none !important; padding: 0 !important; display: block;
+}
+.feel-editorial-industrial #process .process-grid .process-step:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial #process .process-step-header {
+  background: transparent !important; padding: 0 !important; min-height: 0 !important;
+  display: block; position: static; margin-bottom: 14px;
+}
+.feel-editorial-industrial #process .process-step-header::before {
+  position: static; left: auto; bottom: auto; display: block;
+  color: var(--color-accent); font-size: clamp(46px, 4.4vw, 60px); line-height: 0.9;
+}
+.feel-editorial-industrial #process .process-step-icon { display: none; }
+.feel-editorial-industrial #process .process-step-body { padding: 0 !important; }
+.feel-editorial-industrial #process .process-step-body h3 { text-transform: uppercase; font-size: clamp(18px, 1.6vw, 21px); margin: 0 0 8px; }
+@media (max-width: 760px) {
+  .feel-editorial-industrial #process .process-grid { grid-template-columns: repeat(2, 1fr) !important; row-gap: 40px; }
+}
+
+/* 3) WHERE IT WORKS → hairline index list + small copper Material Symbol icons */
+.feel-editorial-industrial .svc-applications { background: transparent !important; }
+.feel-editorial-industrial .applications-grid {
+  grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .application-item {
+  background: transparent !important; border: 0 !important;
+  border-bottom: 1px solid var(--hairline) !important; border-radius: 0 !important; box-shadow: none !important;
+  padding: 18px 4px; display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: baseline;
+}
+.feel-editorial-industrial .application-item:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial .application-item::before { content: attr(data-ms); font-size: 22px; grid-row: 1 / span 2; align-self: center; }
+.feel-editorial-industrial .application-item h3 { grid-column: 2; text-transform: uppercase; font-size: 15px; margin: 0 0 2px; }
+.feel-editorial-industrial .application-item p { grid-column: 2; margin: 0; font-size: 13px; line-height: 1.5; }
+@media (max-width: 760px) {
+  .feel-editorial-industrial .applications-grid { grid-template-columns: 1fr; }
+}
+
+    /* ── CONTACT PAGE ────────────────────────────────────────────────────────── */
+    .contact-hero { background: var(--color-primary); color: var(--white); padding: 56px 0 44px; margin-top: 80px; text-align: center; }
+    .contact-hero .section-eyebrow { color: var(--color-accent); }
+    .contact-hero h1 { color: var(--white); font-size: clamp(28px,4vw,42px); margin-bottom: 8px; }
+    .contact-hero p { color: rgba(255,255,255,0.8); font-size: 17px; max-width: 600px; margin: 0 auto; }
+    .contact-main { padding: 72px 0 80px; background: var(--color-bg); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start; }
+
+    /* Form */
+    .contact-form-wrap h2 { font-size: 24px; margin-bottom: 24px; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-mid); }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--font-body); font-size: 15px; color: var(--color-text); background: var(--white); transition: border-color var(--transition), box-shadow var(--transition); -webkit-appearance: none; appearance: none; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-submit { background: var(--color-accent); color: var(--white); border: none; border-radius: var(--radius); height: 50px; padding: 0 28px; font-size: 14px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; cursor: pointer; width: 100%; transition: filter var(--transition); }
+    .form-submit:hover { filter: brightness(0.88); }
+    .form-disclaimer { font-size: 13px; color: var(--text-light); text-align: center; }
+
+    /* Info card */
+    .contact-info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .contact-info-header { background: var(--color-primary); color: var(--white); padding: 20px 24px; }
+    .contact-info-header h2 { font-size: 18px; color: var(--white); }
+    .contact-info-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-info-icon { width: 38px; height: 38px; background: var(--color-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary); }
+    .contact-info-text { display: flex; flex-direction: column; gap: 2px; }
+    .contact-info-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); }
+    .contact-info-value { font-size: 15px; color: var(--color-text); font-weight: 600; }
+    .contact-info-value a { color: var(--color-primary); }
+    .contact-info-value a:hover { color: var(--color-accent); }
+    .contact-map { width: 100%; height: 220px; border: none; display: block; }
+
+    /* Response promise */
+    .contact-promise { background: var(--color-accent); color: var(--white); padding: 18px 24px; display: flex; align-items: center; gap: 14px; }
+    .contact-promise svg { flex-shrink: 0; }
+    .contact-promise p { font-size: 14px; font-weight: 600; }
+
+    /* Service areas */
+    .contact-areas { padding: 48px 0 64px; }
+    .contact-areas h2 { font-size: 22px; margin-bottom: 20px; }
+    .area-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .area-pill { display: inline-block; padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px; font-size: 14px; color: var(--text-mid); text-decoration: none; transition: background var(--transition), color var(--transition), border-color var(--transition); }
+    .area-pill:hover { background: var(--color-primary); color: var(--white); border-color: var(--color-primary); }
+
+    @media(max-width:992px){ .contact-grid{grid-template-columns:1fr;} }
+    @media(max-width:768px){ .form-row{grid-template-columns:1fr;} }
+  </style>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PR2GTDPZ');</script><!-- End Google Tag Manager -->
+</head>
+<body class="pattern-diagonal-hatch feel-editorial-industrial">
+  <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PR2GTDPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<a href="#page-content" class="skip-link">Skip to main content</a>
+<header id="site-nav" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Go to homepage"><span style="display:flex;align-items:center;gap:10px;line-height:1"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0"><rect x="8" y="8" width="16" height="16" rx="2" fill="#994618" transform="rotate(45 16 16)"/><path d="M16 10 C16 10 13 14 13 18 C13 20.5 14.3 22 16 22 C17.7 22 19 20.5 19 18 C19 14 16 10 16 10Z" fill="#1D1B19" opacity="0.85"/><line x1="16" y1="13" x2="16" y2="23" stroke="#994618" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/></svg><span style="display:flex;flex-direction:column;gap:1px;flex-shrink:1"><span style="font-family:'Barlow Condensed',serif;font-size:10px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.75);line-height:1;white-space:nowrap">VANCOUVER PRO</span><span style="font-family:'Barlow Condensed',serif;font-size:15px;font-weight:800;letter-spacing:0.06em;color:#FFFFFF;line-height:1;white-space:nowrap">SANDBLASTING</span></span></span></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" onclick="toggleServicesMenu(event)">
+            Services
+            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav-dropdown-menu" role="list">
+            <li><a href="/services/rust-corrosion-removal/" onclick="closeServicesMenu()">Rust & Corrosion Removal</a></li>
+            <li><a href="/services/paint-coating-removal/" onclick="closeServicesMenu()">Paint & Coating Removal</a></li>
+            <li><a href="/services/concrete-cleaning-restoration/" onclick="closeServicesMenu()">Concrete Cleaning & Restoration</a></li>
+            <li><a href="/services/dustless-wet-blasting/" onclick="closeServicesMenu()">Dustless / Wet Blasting</a></li>
+            <li><a href="/services/industrial-commercial-coating-prep/" onclick="closeServicesMenu()">Industrial & Commercial Coating Prep</a></li>
+            <li><a href="/services/automotive-marine-blasting/" onclick="closeServicesMenu()">Automotive & Marine Blasting</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li><li><a href="/cost-guides/sandblasting-cost-vancouver/">Price Guide</a></li>
+        <li><a href="/contact/" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:+17782001359" class="nav-phone" aria-label="Call us"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (778) 200-1359</a>
+        <a href="/contact/" class="btn btn-primary" aria-current="page">Free Estimate</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile-menu" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="/services/rust-corrosion-removal/" onclick="closeMenu()">Rust & Corrosion Removal</a>
+    <a href="/services/paint-coating-removal/" onclick="closeMenu()">Paint & Coating Removal</a>
+    <a href="/services/concrete-cleaning-restoration/" onclick="closeMenu()">Concrete Cleaning & Restoration</a>
+    <a href="/services/dustless-wet-blasting/" onclick="closeMenu()">Dustless / Wet Blasting</a>
+    <a href="/services/industrial-commercial-coating-prep/" onclick="closeMenu()">Industrial & Commercial Coating Prep</a>
+    <a href="/services/automotive-marine-blasting/" onclick="closeMenu()">Automotive & Marine Blasting</a>
+    <a href="/about/" onclick="closeMenu()">About</a>
+    <a href="/reviews/" onclick="closeMenu()">Reviews</a>
+    <a href="/faq/" onclick="closeMenu()">FAQ</a>
+    <a href="/blog/" onclick="closeMenu()">Blog</a>
+    <a href="/contact/" onclick="closeMenu()" aria-current="page">Contact</a>
+    <a href="tel:+17782001359" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (778) 200-1359</a>
+    <a href="/contact/" class="btn btn-primary mobile-cta" onclick="closeMenu()">Free Estimate</a>
+  </nav>
+</header>
+
+<main id="page-content" style="margin-top:80px;" aria-label="Contact us">
+
+  <!-- ── Contact Hero ───────────────────────────────────────────────────── -->
+  <section class="contact-hero">
+    <div class="container">
+      <span class="section-eyebrow">Contact Us</span>
+      <h1>Ready to Get Your Surface Blasted Clean?</h1>
+      <p>Tell us what needs stripping and where it is, and we'll come take a look. You'll get a free written estimate covering the method, the media, and the cost before any work begins.</p>
+    </div>
+  </section>
+
+  <!-- ── Response Promise Banner ───────────────────────────────────────── -->
+  <div class="contact-promise">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <p>We respond to all inquiries within one business day, and usually the same day on weekdays.</p>
+  </div>
+
+  <!-- ── Contact Form + Info ─────────────────────────────────────────────── -->
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: Contact form -->
+        <div class="contact-form-wrap">
+          <h2>Request a Free Estimate</h2>
+          <form class="contact-form" name="contact" method="POST" action="https://leads-proxy.jeongpark95.workers.dev" data-leads-form>
+            <input type="hidden" name="run_id" value="sandblasting-vancouver-001">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Full name</label>
+                <input type="text" id="c-name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="c-phone">Phone number</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="(416) 555-0100" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email address</label>
+              <input type="email" id="c-email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="c-address">Property address</label>
+              <input type="text" id="c-address" name="address" placeholder="Your address in Vancouver">
+            </div>
+            <div class="form-group">
+              <label for="c-service">Service interested in</label>
+              <select id="c-service" name="service">
+                <option value="">Select a service…</option>
+                <option value="Rust & Corrosion Removal">Rust & Corrosion Removal</option>
+                <option value="Paint & Coating Removal">Paint & Coating Removal</option>
+                <option value="Concrete Cleaning & Restoration">Concrete Cleaning & Restoration</option>
+                <option value="Dustless / Wet Blasting">Dustless / Wet Blasting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Tell us about your project</label>
+              <textarea id="c-message" name="message" placeholder="Approximate size, timeline, any questions…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Free Estimate</button>
+            <p class="form-disclaimer">No spam — ever. We'll respond within 1 business day.</p>
+          </form>
+          <div class="form-thank-you" id="contact-thank-you" aria-live="polite">
+            <div class="form-thank-you-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3>We've got your request!</h3>
+            <p>We respond to all inquiries within one business day, and usually the same day on weekdays.</p>
+            <a href="/">Back to home</a>
+          </div>
+        </div>
+
+        <!-- Right: Contact info card -->
+        <div>
+          <div class="contact-info-card">
+            <div class="contact-info-header">
+              <h2>Get in Touch</h2>
+            </div>
+            <div class="contact-info-body">
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Phone</span>
+                  <span class="contact-info-value"><a href="tel:+17782001359">+1 (778) 200-1359</a></span>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Hours</span>
+                  <span class="contact-info-value">Mon–Fri 7am–5:30pm · Sat 8am–1pm</span>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="contact-info-text">
+                  <span class="contact-info-label">Location</span>
+                  <span class="contact-info-value">Vancouver, British Columbia</span>
+                </div>
+              </div>
+            </div>
+            <!-- Google Maps embed -->
+            <iframe class="contact-map"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=49.2827,-123.1207&hl=en&z=13&output=embed"
+              title="Our location on Google Maps"
+              aria-label="Map showing our location in Vancouver">
+            </iframe>
+          </div>
+        </div>
+
+      </div><!-- /.contact-grid -->
+    </div>
+  </section>
+
+  <!-- ── Service Areas ─────────────────────────────────────────────────── -->
+  <section class="contact-areas">
+    <div class="container">
+      <h2>Areas We Serve</h2>
+      <div class="area-pills">
+        <a href="/" class="area-pill">Vancouver</a>
+        <a href="/areas/burnaby/" class="area-pill">Burnaby</a>
+        <a href="/areas/richmond/" class="area-pill">Richmond</a>
+        <a href="/areas/surrey/" class="area-pill">Surrey</a>
+        <a href="/areas/new-westminster/" class="area-pill">New Westminster</a>
+        <a href="/areas/coquitlam/" class="area-pill">Coquitlam</a>
+        <a href="/areas/port-coquitlam/" class="area-pill">Port Coquitlam</a>
+        <a href="/areas/north-vancouver/" class="area-pill">North Vancouver</a>
+        <a href="/areas/delta/" class="area-pill">Delta</a>
+        <a href="/areas/west-vancouver/" class="area-pill">West Vancouver</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-col"><h4><a href="/" class="footer-brand-link">Vancouver Pro Sandblasting</a></h4><p>Mobile sandblasting and dustless blasting for Vancouver and the Lower Mainland. Serving Burnaby, Richmond, Surrey, the North Shore, and surrounding communities.</p><address class="footer-nap" style="font-style:normal;"><span>Vancouver, British Columbia</span><br><a href="tel:+17782001359" style="color:rgba(255,255,255,0.65);">+1 (778) 200-1359</a></address></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/rust-corrosion-removal/">Rust & Corrosion Removal</a></li><li><a href="/services/paint-coating-removal/">Paint & Coating Removal</a></li><li><a href="/services/concrete-cleaning-restoration/">Concrete Cleaning & Restoration</a></li><li><a href="/services/dustless-wet-blasting/">Dustless / Wet Blasting</a></li></ul></div>
+    <div class="footer-col"><h4>Enquiry</h4><ul><li><a href="/contact/">Request Quote</a></li><li><a href="/about/">About Us</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li></ul></div>
+    <div class="footer-col"><h4>Serving Metro Vancouver</h4><ul><li><a href="/">Vancouver</a></li><li><a href="/areas/burnaby/">Burnaby</a></li><li><a href="/areas/richmond/">Richmond</a></li><li><a href="/areas/surrey/">Surrey</a></li><li><a href="/areas/new-westminster/">New Westminster</a></li><li><a href="/areas/coquitlam/">Coquitlam</a></li></ul></div>
+  </div></div></div>
+  <div class="container"><div class="footer-bottom"><span>© 2026 Vancouver Pro Sandblasting. Licensed &amp; Insured.</span><span>Vancouver, British Columbia, Canada</span></div></div>
+</footer>
+
+<a id="mobile-cta" href="tel:+17782001359" aria-label="Call us now"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Now — +1 (778) 200-1359</a>
+
+<script>
+  function toggleMenu(btn){var m=document.getElementById('mobile-nav');m.classList.toggle('open');btn.setAttribute('aria-expanded',String(!m.classList.contains('open')));}
+  function closeMenu(){var m=document.getElementById('mobile-nav');m.classList.remove('open');var b=document.querySelector('.nav-hamburger');if(b)b.setAttribute('aria-expanded','false');}
+  window.addEventListener('scroll',function(){var n=document.getElementById('site-nav');n.style.boxShadow=window.scrollY>10?'0 2px 16px rgba(0,0,0,0.25)':'0 2px 12px rgba(0,0,0,0.2)';},{passive:true});
+
+  /* ── SERVICES DROPDOWN ── */
+  function toggleServicesMenu(e) {
+    e.stopPropagation();
+    var dd = document.querySelector('.nav-dropdown');
+    if (!dd) return;
+    var open = dd.hasAttribute('data-open');
+    dd.toggleAttribute('data-open', !open);
+    dd.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', String(!open));
+    if (!open) {
+      var firstLink = dd.querySelector('.nav-dropdown-menu a');
+      if (firstLink) requestAnimationFrame(function() { firstLink.focus(); });
+    }
+  }
+  function closeServicesMenu(returnFocus) {
+    var dd = document.querySelector('.nav-dropdown');
+    if (!dd || !dd.hasAttribute('data-open')) return;
+    dd.removeAttribute('data-open');
+    var trigger = dd.querySelector('.nav-dropdown-trigger');
+    trigger.setAttribute('aria-expanded', 'false');
+    if (returnFocus) trigger.focus();
+  }
+  (function() {
+    var evt = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+    document.addEventListener(evt, function(e) {
+      var dd = document.querySelector('.nav-dropdown');
+      if (dd && !dd.contains(e.target)) closeServicesMenu(false);
+    });
+  })();
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeServicesMenu(true); });
+
+  /* ── LEADS FORM — async submit + inline thank-you ── */
+  (function(){
+    document.querySelectorAll('form[data-leads-form]').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var params = new URLSearchParams(new FormData(form)).toString();
+        var btn = form.querySelector('[type="submit"]');
+        if(btn){ btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params,
+          keepalive: true
+        }).catch(function(){});
+        function showThankYou(){
+          form.style.display = 'none';
+          var ty = form.parentElement.querySelector('.form-thank-you');
+          if(ty){ ty.style.display = 'flex'; }
+        }
+        showThankYou();
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[[redirects]]
+  from = "/areas/vancouver/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "http://www.sandblastingvancouverpros.com/*"
+  to = "https://sandblastingvancouverpros.com/:splat"
+  status = 301
+  force = true
