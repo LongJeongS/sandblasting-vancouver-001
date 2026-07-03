@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | Vancouver Pro Sandblasting</title>
@@ -1489,6 +1489,59 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   .feel-editorial-industrial .applications-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Lead form spam protection ─────────────────────────────────────────── */
+/* Honeypot: visually removed but present in the DOM for bots to fill. */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+/* Inline lead-form submission error (shown only when capture fails). */
+.form-error {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-left: 3px solid #b3261e;
+  background: rgba(179, 38, 30, 0.08);
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error a { font-weight: 600; text-decoration: underline; color: inherit; }
+
+/* ── Inline quote form (service / area / cost-guide money pages) ────────── */
+.quote-form-section { padding: 64px 0; background: var(--bg-alt, #f7f7f5); }
+.quote-form-card {
+  max-width: 640px; margin: 0 auto; padding: 36px 32px;
+  background: var(--white, #fff); border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08));
+}
+.quote-form-card h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 8px; }
+.quote-form-sub { color: var(--text-mid, #555); font-size: 15px; margin: 0 0 24px; }
+.quote-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.quote-form input[type="text"],
+.quote-form input[type="tel"],
+.quote-form input[type="email"] {
+  width: 100%; padding: 12px 14px; font-size: 15px; font-family: inherit;
+  border: 1px solid var(--border, #ddd); border-radius: var(--radius, 6px);
+  background: var(--white, #fff); box-sizing: border-box;
+}
+.quote-form input:focus { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+.quote-form-submit {
+  width: 100%; padding: 14px 20px; margin-top: 4px; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: var(--white, #fff); background: var(--color-accent);
+  border: none; border-radius: var(--radius, 6px); cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.quote-form-submit:hover { filter: brightness(0.92); }
+.quote-form-submit:disabled { opacity: 0.7; cursor: wait; }
+@media (max-width: 560px) {
+  .quote-form-row { grid-template-columns: 1fr; }
+  .quote-form-card { padding: 28px 20px; }
+}
+
     /* ── LEGAL DOC TEMPLATE (terms.html / privacy.html) ──────────────────── */
     .legal-hero { background: var(--color-primary); color: var(--white); padding: 80px 0 48px; }
     .legal-hero .container { max-width: 800px; }
@@ -1567,7 +1620,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   <section class="legal-hero">
     <div class="container">
       <h1>Terms of Service</h1>
-      <p class="legal-meta">Site: <strong>https://sandblastingvancouverpros.com</strong> · Operator: <strong>InView Marketing</strong> · Last Updated: <strong>July 01, 2026</strong></p>
+      <p class="legal-meta">Site: <strong>https://sandblastingvancouverpros.com</strong> · Operator: <strong>InView Marketing</strong> · Last Updated: <strong>July 03, 2026</strong></p>
     </div>
   </section>
 
