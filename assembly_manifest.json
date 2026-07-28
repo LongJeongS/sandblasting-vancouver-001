@@ -14,6 +14,7 @@
     "services/dustless-wet-blasting/index.html",
     "services/industrial-commercial-coating-prep/index.html",
     "services/automotive-marine-blasting/index.html",
+    "services/mobile-on-site-sandblasting/index.html",
     "areas/burnaby/index.html",
     "areas/richmond/index.html",
     "areas/surrey/index.html",
@@ -25,8 +26,8 @@
     "areas/west-vancouver/index.html",
     "cost-guides/sandblasting-cost-vancouver/index.html"
   ],
-  "total_pages": 23,
-  "image_count": 40,
+  "total_pages": 24,
+  "image_count": 45,
   "all_urls": [
     "/",
     "/about/",
@@ -41,6 +42,7 @@
     "/services/dustless-wet-blasting/",
     "/services/industrial-commercial-coating-prep/",
     "/services/automotive-marine-blasting/",
+    "/services/mobile-on-site-sandblasting/",
     "/areas/burnaby/",
     "/areas/richmond/",
     "/areas/surrey/",
@@ -54,5 +56,5 @@
     "/blog/",
     "/blog/can-you-diy-sandblasting-vancouver/"
   ],
-  "assembled_at": "2026-07-03T01:33:10.717607+00:00"
+  "assembled_at": "2026-07-28T16:11:37.622209+00:00"
 }
