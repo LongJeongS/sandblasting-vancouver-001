@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Vancouver Pro Sandblasting</title>
   <meta name="description" content="Tips, guides, and local insights on sandblasting from Vancouver Pro Sandblasting — serving Vancouver and surrounding areas.">
-  <link rel="canonical" href="https://sandblastingvancouverpros.comblog/">
+  <link rel="canonical" href="https://sandblastingvancouverpros.com/blog/">
   <meta property="og:title" content="Blog | Vancouver Pro Sandblasting">
   <meta property="og:description" content="Tips, guides, and local insights on sandblasting from Vancouver Pro Sandblasting — serving Vancouver and surrounding areas.">
-  <meta property="og:url" content="https://sandblastingvancouverpros.comblog/">
+  <meta property="og:url" content="https://sandblastingvancouverpros.com/blog/">
   <meta property="og:image" content="https://sandblastingvancouverpros.com/images/hero_bg.webp">
   <meta property="og:type" content="website">
   <style>
@@ -1493,6 +1493,59 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   .feel-editorial-industrial .applications-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Lead form spam protection ─────────────────────────────────────────── */
+/* Honeypot: visually removed but present in the DOM for bots to fill. */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+/* Inline lead-form submission error (shown only when capture fails). */
+.form-error {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-left: 3px solid #b3261e;
+  background: rgba(179, 38, 30, 0.08);
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error a { font-weight: 600; text-decoration: underline; color: inherit; }
+
+/* ── Inline quote form (service / area / cost-guide money pages) ────────── */
+.quote-form-section { padding: 64px 0; background: var(--bg-alt, #f7f7f5); }
+.quote-form-card {
+  max-width: 640px; margin: 0 auto; padding: 36px 32px;
+  background: var(--white, #fff); border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08));
+}
+.quote-form-card h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 8px; }
+.quote-form-sub { color: var(--text-mid, #555); font-size: 15px; margin: 0 0 24px; }
+.quote-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.quote-form input[type="text"],
+.quote-form input[type="tel"],
+.quote-form input[type="email"] {
+  width: 100%; padding: 12px 14px; font-size: 15px; font-family: inherit;
+  border: 1px solid var(--border, #ddd); border-radius: var(--radius, 6px);
+  background: var(--white, #fff); box-sizing: border-box;
+}
+.quote-form input:focus { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+.quote-form-submit {
+  width: 100%; padding: 14px 20px; margin-top: 4px; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: var(--white, #fff); background: var(--color-accent);
+  border: none; border-radius: var(--radius, 6px); cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.quote-form-submit:hover { filter: brightness(0.92); }
+.quote-form-submit:disabled { opacity: 0.7; cursor: wait; }
+@media (max-width: 560px) {
+  .quote-form-row { grid-template-columns: 1fr; }
+  .quote-form-card { padding: 28px 20px; }
+}
+
     /* ── BLOG INDEX ─────────────────────────────────────────────────────────── */
     .blog-hero { background: var(--color-primary); color: var(--white); padding: 60px 0 48px; margin-top: 80px; }
     .blog-hero .section-eyebrow { color: var(--color-accent); }
@@ -1554,6 +1607,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
             <li><a href="/services/dustless-wet-blasting/" onclick="closeServicesMenu()">Dustless / Wet Blasting</a></li>
             <li><a href="/services/industrial-commercial-coating-prep/" onclick="closeServicesMenu()">Industrial & Commercial Coating Prep</a></li>
             <li><a href="/services/automotive-marine-blasting/" onclick="closeServicesMenu()">Automotive & Marine Blasting</a></li>
+            <li><a href="/services/mobile-on-site-sandblasting/" onclick="closeServicesMenu()">Mobile On-Site Sandblasting</a></li>
           </ul>
         </li>
         <li><a href="/about/">About</a></li>
@@ -1581,6 +1635,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
     <a href="/services/dustless-wet-blasting/" onclick="closeMenu()">Dustless / Wet Blasting</a>
     <a href="/services/industrial-commercial-coating-prep/" onclick="closeMenu()">Industrial & Commercial Coating Prep</a>
     <a href="/services/automotive-marine-blasting/" onclick="closeMenu()">Automotive & Marine Blasting</a>
+    <a href="/services/mobile-on-site-sandblasting/" onclick="closeMenu()">Mobile On-Site Sandblasting</a>
     <a href="/about/" onclick="closeMenu()">About</a>
     <a href="/reviews/" onclick="closeMenu()">Reviews</a>
     <a href="/faq/" onclick="closeMenu()">FAQ</a>
@@ -1609,6 +1664,32 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   <section class="blog-grid-section">
     <div class="container">
 <div class="blog-grid">
+<article class="blog-card">
+  <a href="/blog/dustless-blasting-vancouver-when-its-worth-it/" class="blog-card-link-overlay" aria-label="Dustless Blasting in Vancouver: What It Is and When It's Worth It"></a>
+  <div class="blog-card-img">
+    <img src="/images/blog/dustless-blasting-vancouver-when-its-worth-it.jpg" alt="Dustless Blasting in Vancouver: What It Is and When It's Worth It" loading="lazy">
+    <span class="blog-card-badge">Comparison</span>
+  </div>
+  <div class="blog-card-body">
+    <p class="blog-card-date">2026-09-03</p>
+    <h2 class="blog-card-title">Dustless Blasting in Vancouver: What It Is and When It's Worth It</h2>
+    <p class="blog-card-excerpt">Dustless blasting mixes water with the abrasive to knock down airborne dust. Here's how it compares to dry blasting, and the Vancouver jobs where it earns its keep.</p>
+    <a href="/blog/dustless-blasting-vancouver-when-its-worth-it/" class="blog-card-link" aria-hidden="true" tabindex="-1">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
+<article class="blog-card">
+  <a href="/blog/boat-hull-sandblasting-bc/" class="blog-card-link-overlay" aria-label="Boat Hull Sandblasting in BC: Process, Timing and What It Costs"></a>
+  <div class="blog-card-img">
+    <img src="/images/blog/boat-hull-sandblasting-bc.jpg" alt="Boat Hull Sandblasting in BC: Process, Timing and What It Costs" loading="lazy">
+    <span class="blog-card-badge">How-To</span>
+  </div>
+  <div class="blog-card-body">
+    <p class="blog-card-date">2026-09-03</p>
+    <h2 class="blog-card-title">Boat Hull Sandblasting in BC: Process, Timing and What It Costs</h2>
+    <p class="blog-card-excerpt">Decades of antifouling paint come off a hull faster with blasting than any scraper. What the process looks like in BC, when to book it, and what moves the price.</p>
+    <a href="/blog/boat-hull-sandblasting-bc/" class="blog-card-link" aria-hidden="true" tabindex="-1">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 <article class="blog-card">
   <a href="/blog/can-you-diy-sandblasting-vancouver/" class="blog-card-link-overlay" aria-label="Can You DIY Sandblasting in Vancouver? DIY vs. Hiring a Pro"></a>
   <div class="blog-card-img">

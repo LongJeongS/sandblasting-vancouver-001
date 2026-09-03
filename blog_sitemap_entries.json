@@ -1,10 +1,14 @@
 {
   "blog_urls": [
     "/blog/",
+    "/blog/dustless-blasting-vancouver-when-its-worth-it/",
+    "/blog/boat-hull-sandblasting-bc/",
     "/blog/can-you-diy-sandblasting-vancouver/"
   ],
   "blog_lastmods": {
+    "/blog/dustless-blasting-vancouver-when-its-worth-it/": "2026-09-03",
+    "/blog/boat-hull-sandblasting-bc/": "2026-09-03",
     "/blog/can-you-diy-sandblasting-vancouver/": "2026-07-01",
-    "/blog/": "2026-07-01"
+    "/blog/": "2026-09-03"
   }
 }

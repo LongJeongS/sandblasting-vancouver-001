@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Can You DIY Sandblasting in Vancouver? DIY vs. Hiring a Pro | Vancouver Pro Sandblasting</title>
   <meta name="description" content="Thinking about DIY sandblasting in Vancouver? See what the equipment, dust, and cleanup really involve — and when hiring a mobile blasting pro is the smarter move.">
-  <link rel="canonical" href="https://sandblastingvancouverpros.comblog/can-you-diy-sandblasting-vancouver/">
+  <link rel="canonical" href="https://sandblastingvancouverpros.com/blog/can-you-diy-sandblasting-vancouver/">
   <meta property="og:title" content="Can You DIY Sandblasting in Vancouver? DIY vs. Hiring a Pro | Vancouver Pro Sandblasting">
   <meta property="og:description" content="Thinking about DIY sandblasting in Vancouver? See what the equipment, dust, and cleanup really involve — and when hiring a mobile blasting pro is the smarter move.">
-  <meta property="og:url" content="https://sandblastingvancouverpros.comblog/can-you-diy-sandblasting-vancouver/">
+  <meta property="og:url" content="https://sandblastingvancouverpros.com/blog/can-you-diy-sandblasting-vancouver/">
   <meta property="og:image" content="/images/blog/can-you-diy-sandblasting-vancouver.webp">
   <meta property="og:type" content="article">
 
@@ -1536,6 +1536,59 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   .feel-editorial-industrial .applications-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Lead form spam protection ─────────────────────────────────────────── */
+/* Honeypot: visually removed but present in the DOM for bots to fill. */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+/* Inline lead-form submission error (shown only when capture fails). */
+.form-error {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-left: 3px solid #b3261e;
+  background: rgba(179, 38, 30, 0.08);
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error a { font-weight: 600; text-decoration: underline; color: inherit; }
+
+/* ── Inline quote form (service / area / cost-guide money pages) ────────── */
+.quote-form-section { padding: 64px 0; background: var(--bg-alt, #f7f7f5); }
+.quote-form-card {
+  max-width: 640px; margin: 0 auto; padding: 36px 32px;
+  background: var(--white, #fff); border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08));
+}
+.quote-form-card h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 8px; }
+.quote-form-sub { color: var(--text-mid, #555); font-size: 15px; margin: 0 0 24px; }
+.quote-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.quote-form input[type="text"],
+.quote-form input[type="tel"],
+.quote-form input[type="email"] {
+  width: 100%; padding: 12px 14px; font-size: 15px; font-family: inherit;
+  border: 1px solid var(--border, #ddd); border-radius: var(--radius, 6px);
+  background: var(--white, #fff); box-sizing: border-box;
+}
+.quote-form input:focus { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+.quote-form-submit {
+  width: 100%; padding: 14px 20px; margin-top: 4px; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: var(--white, #fff); background: var(--color-accent);
+  border: none; border-radius: var(--radius, 6px); cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.quote-form-submit:hover { filter: brightness(0.92); }
+.quote-form-submit:disabled { opacity: 0.7; cursor: wait; }
+@media (max-width: 560px) {
+  .quote-form-row { grid-template-columns: 1fr; }
+  .quote-form-card { padding: 28px 20px; }
+}
+
     /* ── BLOG POST ───────────────────────────────────────────────────────────── */
     .post-hero { position: relative; margin-top: 80px; height: clamp(260px, 38vw, 420px); overflow: hidden; background: var(--color-primary); }
     .post-hero img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.45; }
@@ -1628,6 +1681,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
             <li><a href="/services/dustless-wet-blasting/" onclick="closeServicesMenu()">Dustless / Wet Blasting</a></li>
             <li><a href="/services/industrial-commercial-coating-prep/" onclick="closeServicesMenu()">Industrial & Commercial Coating Prep</a></li>
             <li><a href="/services/automotive-marine-blasting/" onclick="closeServicesMenu()">Automotive & Marine Blasting</a></li>
+            <li><a href="/services/mobile-on-site-sandblasting/" onclick="closeServicesMenu()">Mobile On-Site Sandblasting</a></li>
           </ul>
         </li>
         <li><a href="/about/">About</a></li>
@@ -1655,6 +1709,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
     <a href="/services/dustless-wet-blasting/" onclick="closeMenu()">Dustless / Wet Blasting</a>
     <a href="/services/industrial-commercial-coating-prep/" onclick="closeMenu()">Industrial & Commercial Coating Prep</a>
     <a href="/services/automotive-marine-blasting/" onclick="closeMenu()">Automotive & Marine Blasting</a>
+    <a href="/services/mobile-on-site-sandblasting/" onclick="closeMenu()">Mobile On-Site Sandblasting</a>
     <a href="/about/" onclick="closeMenu()">About</a>
     <a href="/reviews/" onclick="closeMenu()">Reviews</a>
     <a href="/faq/" onclick="closeMenu()">FAQ</a>
@@ -1787,6 +1842,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
 <a href="/services/dustless-wet-blasting/" class="sidebar-service-link">Dustless / Wet Blasting <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <a href="/services/industrial-commercial-coating-prep/" class="sidebar-service-link">Industrial & Commercial Coating Prep <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <a href="/services/automotive-marine-blasting/" class="sidebar-service-link">Automotive & Marine Blasting <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a href="/services/mobile-on-site-sandblasting/" class="sidebar-service-link">Mobile On-Site Sandblasting <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </div>
 
