@@ -1532,6 +1532,9 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
 }
 
 /* ── Lead form spam protection ─────────────────────────────────────────── */
+/* Turnstile (managed mode): renders a compact verification strip above the submit button. */
+.cf-turnstile { margin: 0 0 14px; min-height: 65px; }
+
 /* Honeypot: visually removed but present in the DOM for bots to fill. */
 .hp-field {
   position: absolute !important;
@@ -1903,6 +1906,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
             <input type="email" name="email" placeholder="Email (optional)" autocomplete="email" aria-label="Email address">
             <input type="text" name="message" placeholder="What do you need done?" aria-label="Project details">
           </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAEueQ67CT2zJIl9y" data-size="flexible" data-theme="light"></div>
           <button type="submit" class="quote-form-submit">Request My Free Quote</button>
         </form>
         <div class="form-thank-you" aria-live="polite">
@@ -2023,17 +2027,26 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
           var ty = form.parentElement.querySelector('.form-thank-you');
           if(ty){ ty.style.display = 'flex'; }
         }
-        function showError(){
+        function showError(msg){
           if(btn){ btn.disabled = false; btn.textContent = btnLabel; }
           var err = form.querySelector('.form-error');
           if(!err){
             err = document.createElement('p');
             err.className = 'form-error';
             err.setAttribute('role', 'alert');
-            err.innerHTML = 'Something went wrong sending your request. Please try again, or call <a href="tel:+17782001359">+1 (778) 200-1359</a>.';
             form.appendChild(err);
           }
+          err.innerHTML = msg || 'Something went wrong sending your request. Please try again, or call <a href="tel:+17782001359">+1 (778) 200-1359</a>.';
           err.style.display = 'block';
+          /* Turnstile tokens are single-use: reset the widget so a retry gets a fresh one. */
+          var tw = form.querySelector('.cf-turnstile');
+          if(tw && window.turnstile){ try { window.turnstile.reset(tw); } catch(_){} }
+        }
+        /* Managed Turnstile fills a hidden cf-turnstile-response input once the check passes. */
+        var tsToken = form.querySelector('input[name="cf-turnstile-response"]');
+        if(!tsToken || !tsToken.value){
+          showError('Please wait a moment for the security check to finish, then try again.');
+          return;
         }
         fetch(form.action, {
           method: 'POST',
@@ -2045,10 +2058,11 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
           return res.json().then(function(data){
             if(data && data.ok === false){ throw new Error(data.error || 'rejected'); }
           }, function(){ /* 2xx but non-JSON (legacy script) - treat as success */ });
-        }).then(showThankYou, showError);
+        }).then(showThankYou, function(){ showError(); });
       });
     });
   })();
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
