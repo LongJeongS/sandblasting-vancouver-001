@@ -4,7 +4,6 @@
     "index.html",
     "about/index.html",
     "contact/index.html",
-    "reviews/index.html",
     "faq/index.html",
     "terms/index.html",
     "privacy/index.html",
@@ -26,13 +25,12 @@
     "areas/west-vancouver/index.html",
     "cost-guides/sandblasting-cost-vancouver/index.html"
   ],
-  "total_pages": 24,
+  "total_pages": 23,
   "image_count": 19,
   "all_urls": [
     "/",
     "/about/",
     "/contact/",
-    "/reviews/",
     "/faq/",
     "/terms/",
     "/privacy/",
@@ -58,5 +56,5 @@
     "/blog/boat-hull-sandblasting-bc/",
     "/blog/can-you-diy-sandblasting-vancouver/"
   ],
-  "assembled_at": "2026-09-10T01:36:04.523131+00:00"
+  "assembled_at": "2026-09-10T16:25:22.928916+00:00"
 }

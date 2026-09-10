@@ -960,6 +960,16 @@ ul { list-style: none; }
   color: var(--white);
 }
 
+/* Footer disclaimer: lead-referral posture, sits above the copyright strip on every page. */
+.footer-disclaimer {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding: 20px 0;
@@ -1589,14 +1599,13 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
           </ul>
         </li>
         <li><a href="/about/">About</a></li>
-        <li><a href="/reviews/">Reviews</a></li>
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/blog/">Blog</a></li><li><a href="/cost-guides/sandblasting-cost-vancouver/">Price Guide</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <a href="tel:+17782001359" class="nav-phone" aria-label="Call us"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (778) 200-1359</a>
-        <a href="/contact/" class="btn btn-primary">Free Estimate</a>
+        <a href="/contact/" class="btn btn-primary">Get a Quote</a>
       </div>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
     </nav>
@@ -1610,12 +1619,11 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
     <a href="/services/automotive-marine-blasting/" onclick="closeMenu()">Automotive & Marine Blasting</a>
     <a href="/services/mobile-on-site-sandblasting/" onclick="closeMenu()">Mobile On-Site Sandblasting</a>
     <a href="/about/" onclick="closeMenu()">About</a>
-    <a href="/reviews/" onclick="closeMenu()">Reviews</a>
     <a href="/faq/" onclick="closeMenu()">FAQ</a>
     <a href="/blog/" onclick="closeMenu()">Blog</a>
     <a href="/contact/" onclick="closeMenu()">Contact</a>
     <a href="tel:+17782001359" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (778) 200-1359</a>
-    <a href="/contact/" class="btn btn-primary mobile-cta" onclick="closeMenu()">Free Estimate</a>
+    <a href="/contact/" class="btn btn-primary mobile-cta" onclick="closeMenu()">Get a Quote</a>
   </nav>
 </header>
 
@@ -1733,10 +1741,11 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   <div class="footer-top"><div class="container"><div class="footer-grid">
     <div class="footer-col"><h4><a href="/" class="footer-brand-link">Vancouver Pro Sandblasting</a></h4><p>Mobile sandblasting and dustless blasting for Vancouver and the Lower Mainland. Serving Burnaby, Richmond, Surrey, the North Shore, and surrounding communities.</p><address class="footer-nap" style="font-style:normal;"><span>Vancouver, British Columbia</span><br><a href="tel:+17782001359" style="color:rgba(255,255,255,0.65);">+1 (778) 200-1359</a></address></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/rust-corrosion-removal/">Rust & Corrosion Removal</a></li><li><a href="/services/paint-coating-removal/">Paint & Coating Removal</a></li><li><a href="/services/concrete-cleaning-restoration/">Concrete Cleaning & Restoration</a></li><li><a href="/services/dustless-wet-blasting/">Dustless / Wet Blasting</a></li></ul></div>
-    <div class="footer-col"><h4>Enquiry</h4><ul><li><a href="/contact/">Request Quote</a></li><li><a href="/about/">About Us</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li></ul></div>
+    <div class="footer-col"><h4>Enquiry</h4><ul><li><a href="/contact/">Request Quote</a></li><li><a href="/about/">About Us</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li></ul></div>
     <div class="footer-col"><h4>Serving Metro Vancouver</h4><ul><li><a href="/">Vancouver</a></li><li><a href="/areas/burnaby/">Burnaby</a></li><li><a href="/areas/richmond/">Richmond</a></li><li><a href="/areas/surrey/">Surrey</a></li><li><a href="/areas/new-westminster/">New Westminster</a></li><li><a href="/areas/coquitlam/">Coquitlam</a></li></ul></div>
   </div></div></div>
-  <div class="container"><div class="footer-bottom"><span>© 2026 Vancouver Pro Sandblasting. Licensed &amp; Insured.</span><span>Vancouver, British Columbia, Canada</span></div></div>
+  <div class="container"><p class="footer-disclaimer">This site is a free service to assist homeowners in connecting with local service contractors. All contractors are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.</p></div>
+  <div class="container"><div class="footer-bottom"><span>© 2026 Vancouver Pro Sandblasting. All rights reserved.</span><span>Vancouver, British Columbia, Canada</span></div></div>
 </footer>
 
 <a id="mobile-cta" href="tel:+17782001359" aria-label="Call us now"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Now — +1 (778) 200-1359</a>
