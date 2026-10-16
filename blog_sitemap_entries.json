@@ -1,14 +1,18 @@
 {
   "blog_urls": [
     "/blog/",
+    "/blog/removing-paint-commercial-windows-vancouver/",
+    "/blog/sandblasting-and-painting-vancouver/",
     "/blog/dustless-blasting-vancouver-when-its-worth-it/",
     "/blog/boat-hull-sandblasting-bc/",
     "/blog/can-you-diy-sandblasting-vancouver/"
   ],
   "blog_lastmods": {
+    "/blog/removing-paint-commercial-windows-vancouver/": "2026-10-16",
+    "/blog/sandblasting-and-painting-vancouver/": "2026-10-16",
     "/blog/dustless-blasting-vancouver-when-its-worth-it/": "2026-09-03",
     "/blog/boat-hull-sandblasting-bc/": "2026-09-03",
     "/blog/can-you-diy-sandblasting-vancouver/": "2026-07-01",
-    "/blog/": "2026-09-03"
+    "/blog/": "2026-10-16"
   }
 }
